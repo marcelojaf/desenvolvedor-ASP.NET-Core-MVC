@@ -37,11 +37,4 @@
     <Folder Include="Views\Shared\Components\Carrinho\" />
     <Folder Include="Data\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Views\Filmes\Create.cshtml" />
-    <Content Remove="Views\Filmes\Edit.cshtml" />
-    <Content Remove="Views\Filmes\Details.cshtml" />
-    <Content Remove="Views\Filmes\Delete.cshtml" />
-    <Content Remove="Views\Filmes\Index.cshtml" />
-  </ItemGroup>
 </Project>
