@@ -10,10 +10,64 @@
     <None Remove="Controllers\" />
     <None Remove="Views\" />
     <None Remove="Views\Home\" />
+    <None Remove="Views\Shared\" />
+    <None Remove="wwwrootlibjquery\jquery.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\css\" />
+    <Content Remove="wwwroot\js\" />
+    <Content Remove="wwwroot\lib\font-awesome\css\all.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\v4-shims.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\brands.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\solid.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\brands.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\regular.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\all.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\v5-font-face.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\svg-with-js.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\v4-shims.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\fontawesome.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\svg-with-js.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\v4-font-face.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\v4-font-face.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\v5-font-face.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\regular.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\fontawesome.css" />
+    <Content Remove="wwwroot\lib\font-awesome\css\solid.min.css" />
+    <Content Remove="wwwroot\lib\font-awesome\js\all.min.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\solid.min.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\all.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\regular.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\solid.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\fontawesome.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\regular.min.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\conflict-detection.min.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\brands.min.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\v4-shims.min.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\conflict-detection.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\v4-shims.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\brands.js" />
+    <Content Remove="wwwroot\lib\font-awesome\js\fontawesome.min.js" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Remove="wwwroot\lib\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Remove="wwwroot\lib\font-awesome\sprites\brands.svg" />
+    <Content Remove="wwwroot\lib\font-awesome\sprites\regular.svg" />
+    <Content Remove="wwwroot\lib\font-awesome\sprites\solid.svg" />
   </ItemGroup>
 </Project>
