@@ -1,6 +1,14 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using DevIO.UI.Site.Data;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<MeuDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IPedidoRepository, PedidoRepository>();
 
 var app = builder.Build();
 
