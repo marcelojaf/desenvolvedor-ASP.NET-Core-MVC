@@ -6,9 +6,7 @@
         public string Descricao { get; set; }
         public string Imagem { get; set; }
         public decimal Valor { get; set; }
-
         public DateTime DataCadastro { get; set; }
-
         public Guid FornecedorId { get; set; }
 
         /* EF Relations */
