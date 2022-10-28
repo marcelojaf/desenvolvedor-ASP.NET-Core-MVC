@@ -10,5 +10,6 @@ namespace DevIO.App.Data
             : base(options)
         {
         }
+        public DbSet<DevIO.App.ViewModel.EnderecoViewModel> EnderecoViewModel { get; set; }
     }
 }

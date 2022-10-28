@@ -31,7 +31,7 @@ namespace DevIO.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Logradouro = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),
                     Numero = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),
-                    Complemento = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),
+                    Complemento = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: true),
                     Cep = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),
                     Bairro = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),
                     Cidade = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),

@@ -8,7 +8,8 @@ namespace DevIO.Data.Context
     {
         public MeuDbContext(DbContextOptions options) : base(options)
         {
-
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+            ChangeTracker.AutoDetectChangesEnabled = false;
         }
 
         public DbSet<Produto> Produtos { get; set; }
@@ -20,13 +21,13 @@ namespace DevIO.Data.Context
             // Caso eu esqueça de setar alguma coisa no Mapping, esse código vai garantir
             // que um campo string não seja criado como nvarchar
             // (que aloca 1 espaço de memória pro simbolo e 1 pro valor, pra alfabeto chinês por exemplo)
-            // e que tenha no máximo 500 caracteres
+            // e que tenha no máximo 1000 caracteres
             foreach (var property in modelBuilder.Model.GetEntityTypes()
                 .SelectMany(e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
             {
                 if (property.GetMaxLength() == null)
                 {
-                    property.SetMaxLength(500);
+                    property.SetMaxLength(1000);
                 }
 
                 if (string.IsNullOrEmpty(property.GetColumnType()))
