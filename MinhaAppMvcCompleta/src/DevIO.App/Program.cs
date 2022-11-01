@@ -1,35 +1,22 @@
-using DevIO.App.Data;
-using DevIO.Business.Interfaces;
-using DevIO.Data.Context;
-using DevIO.Data.Repository;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using System.Globalization;
+using DevIO.App.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", true, true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
+    .AddEnvironmentVariables();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
-builder.Services.AddDbContext<MeuDbContext>(options =>
-    options.UseSqlServer(connectionString));
+builder.Services.AddDbContextConfiguration(builder.Configuration);
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddMvcConfiguration();
 
-builder.Services.AddScoped<MeuDbContext>();
-builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
-builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
-builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+builder.Services.ResolveDependencies();
 
 var app = builder.Build();
 
@@ -45,14 +32,7 @@ else
     app.UseHsts();
 }
 
-var defaultCulture = new CultureInfo("pt-BR");
-var localizationOptions = new RequestLocalizationOptions
-{
-    DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(defaultCulture),
-    SupportedCultures = new List<CultureInfo>() { defaultCulture },
-    SupportedUICultures = new List<CultureInfo>() { defaultCulture }
-};
-app.UseRequestLocalization(localizationOptions);
+app.UseGlobalizationConfig();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
