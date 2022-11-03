@@ -1,5 +1,4 @@
 ﻿using DevIO.Business.Models;
-using DevIO.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevIO.Data.Context
